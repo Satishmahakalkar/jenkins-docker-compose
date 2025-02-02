@@ -43,4 +43,44 @@ jenkins-docker-compose/
     │       ├── outputs.tf
     │       └── variables.tf
     ├── terraform.tfstate            # Terraform state file
-    └── terraform.tfstate.backup     # Terraform state backup file
+    └── terraform.tfstate.backup     # Terraform state backup file 
+
+
+
+
+    
+## Setup and Installation
+
+### 1. Clone the Repository
+
+Clone the repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/Satishmahakalkar/jenkins-docker-compose.git
+
+
+
+cd terraform-jenkins
+terraform init
+terraform apply -auto-approve
+This will create the following resources:
+
+A Virtual Private Cloud (VPC)
+A subnet, route table, and internet gateway
+An Elastic IP (EIP)
+A security group
+An EC2 instance with Jenkins installed
+
+4. Set Up Jenkins with Docker
+After the EC2 instance is up, Docker will be used to run Jenkins.
+
+To start Jenkins, use the following Docker command:
+docker-compose up -d
+5. Access Jenkins
+Once the Jenkins server is up, you can access it via the browser. Use the Elastic IP provided by Terraform and access Jenkins at:
+
+cpp
+Copy
+Edit
+http://<Elastic-IP>:8080
+
